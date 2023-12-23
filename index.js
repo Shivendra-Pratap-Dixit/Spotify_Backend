@@ -17,7 +17,10 @@ app.use("/users",userRoutes);
 app.use("/login",authRoutes);
 app.use("/songs",songRoutes);
 app.use("/playlist",playlistRoutes)
-app.use("/s",searchRoutes)
+app.use("/search",searchRoutes)
+app.get("/",(req,res)=>{
+    res.send({message:"Welcome To the Spotify Backend"})
+})
 connection()
 app.listen(port,()=>{
     console.log(`Server is Running at ${port}`)
