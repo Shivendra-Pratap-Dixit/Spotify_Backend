@@ -10,6 +10,6 @@ router.post("/",async(req,res)=>{
     if(!validPassword)
     return res.status(400).send({message:"Invalid email or password"});
 const token=user.generateAuthToken()
-res.status(200).send({data:token,message:"Signing In Please wait... "});
+res.status(200).send({token:token,userId:user._id,message:"Signing In Please wait... "});
 })
 module.exports=router
